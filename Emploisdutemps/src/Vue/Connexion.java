@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Vue;
+
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -141,8 +142,7 @@ public class Connexion extends javax.swing.JFrame {
 
             if (rset.next()){
                 JOptionPane.showMessageDialog(null, "Bienvenue " + rset.getString("prenom"));
-                Menu menu = new Menu();           
-
+                Menu menu = new Menu(rset.getInt("id"));           
                 menu.setVisible(true);
                 this.setVisible(false);
             }
